@@ -1,0 +1,44 @@
+############################
+# .NET / ASP.NET Core
+############################
+bin/
+obj/
+out/
+
+############################
+# Visual Studio
+############################
+.vs/
+.vscode/
+*.suo
+*.user
+*.sln.docstates
+
+############################
+# OS Files
+############################
+.DS_Store
+Thumbs.db
+desktop.ini
+
+############################
+# Logs
+############################
+logs/
+*.log
+
+############################
+# MongoDB (Local)
+############################
+data/
+mongo-data/
+mongodb-data/
+*.bson
+mongod.lock
+
+############################
+# Secrets / Config
+############################
+appsettings.json
+appsettings.Development.json
+appsettings.Local.json
