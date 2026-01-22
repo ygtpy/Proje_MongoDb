@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Admin Dashboard - Modern Dark Sidebar</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet" />
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#53d22d",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#162013",
+                        "sidebar-dark": "#0f160d", // Darker shade for sidebar contrast
+                        "card-dark": "#1f2b1b",    // Slightly lighter dark for cards
+                        "card-light": "#ffffff",   // White cards for light mode
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white transition-colors duration-200">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside class="hidden md:flex w-72 flex-col bg-[#0f160d] dark:bg-[#0f160d] border-r border-[#2e4328]/30 relative z-20">
+            <div class="flex h-full flex-col justify-between p-6">
+                <!-- Logo & Nav -->
+                <div class="flex flex-col gap-8">
+                    <!-- Logo Area -->
+                    <div class="flex items-center gap-4 px-2">
+                        <div class="bg-primary/20 p-2 rounded-xl">
+                            <span class="material-symbols-outlined text-primary text-3xl">grid_view</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-white text-lg font-bold tracking-tight">AdminUI</h1>
+                            <span class="text-[#a2c398] text-xs font-medium">v2.0 Dashboard</span>
+                        </div>
+                    </div>
+                    <!-- Navigation Links -->
+                    <nav class="flex flex-col gap-2">
+                        <a class="flex items-center gap-4 px-4 py-3 rounded-full bg-primary/20 text-white transition-all group" href="#">
+                            <span class="material-symbols-outlined text-primary fill-1">dashboard</span>
+                            <span class="text-sm font-semibold">Dashboard</span>
+                        </a>
+                        <a class="flex items-center gap-4 px-4 py-3 rounded-full text-[#a2c398] hover:bg-[#2e4328]/50 hover:text-white transition-all group" href="#">
+                            <span class="material-symbols-outlined">group</span>
+                            <span class="text-sm font-medium">Users</span>
+                        </a>
+                        <a class="flex items-center gap-4 px-4 py-3 rounded-full text-[#a2c398] hover:bg-[#2e4328]/50 hover:text-white transition-all group" href="#">
+                            <span class="material-symbols-outlined">description</span>
+                            <span class="text-sm font-medium">Reports</span>
+                        </a>
+                        <a class="flex items-center gap-4 px-4 py-3 rounded-full text-[#a2c398] hover:bg-[#2e4328]/50 hover:text-white transition-all group" href="#">
+                            <span class="material-symbols-outlined">settings</span>
+                            <span class="text-sm font-medium">Settings</span>
+                        </a>
+                        <a class="flex items-center gap-4 px-4 py-3 rounded-full text-[#a2c398] hover:bg-[#2e4328]/50 hover:text-white transition-all group" href="#">
+                            <span class="material-symbols-outlined">support_agent</span>
+                            <span class="text-sm font-medium">Support</span>
+                        </a>
+                    </nav>
+                </div>
+                <!-- User/Logout -->
+                <div class="flex flex-col gap-4">
+                    <div class="p-4 rounded-2xl bg-[#1f2b1b] border border-[#2e4328]/50 flex items-center gap-3">
+                        <div class="bg-center bg-no-repeat bg-cover rounded-full size-10 shrink-0 border-2 border-primary" data-alt="User avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDurRFNgHlrRkNYLV4uuz7vQNAoCVyo5R2ehm804-BersGqVgDvt0FXDyIUbAxt48NFoqgRXa3xr0Umxy6XRhznJzC1T084lc657w8exBMg0-F9roQCExPzdAvdIKVoC6seEdvEO-X2ZrbkNh-F_-5UBwWzhCZgHW8pAz7JACUaGdzNqjHJ52T8TMUl015-dhL0ArM1tEvCFbfeJAXA2GMXyuPfWtZnXdy-9gvcxnHH--SgcGkoLcZXcY9tBw9YT7QR29KSmJ1_cOo");'></div>
+                        <div class="overflow-hidden">
+                            <p class="text-white text-sm font-bold truncate">Jane Doe</p>
+                            <p class="text-[#a2c398] text-xs truncate">Admin</p>
+                        </div>
+                    </div>
+                    <button class="flex w-full items-center justify-center gap-2 rounded-full h-11 bg-[#2e4328] hover:bg-[#3a5232] text-white text-sm font-bold tracking-wide transition-colors">
+                        <span class="material-symbols-outlined text-[20px]">logout</span>
+                        <span>Sign Out</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col h-screen overflow-y-auto bg-white dark:bg-[#162013]">
+            <!-- Top Header -->
+            <header class="sticky top-0 z-10 bg-white/80 dark:bg-[#162013]/80 backdrop-blur-md border-b border-gray-100 dark:border-[#2e4328] px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-4 md:hidden">
+                    <button class="p-2 text-slate-600 dark:text-white">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-800 dark:text-white hidden md:block">Overview</h2>
+                <div class="flex items-center gap-4 flex-1 justify-end">
+                    <!-- Search -->
+                    <div class="relative hidden sm:block w-full max-w-md">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span class="material-symbols-outlined text-gray-400">search</span>
+                        </div>
+                        <input class="block w-full pl-10 pr-3 py-2.5 border-none rounded-xl leading-5 bg-gray-100 dark:bg-[#2e4328] text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary sm:text-sm transition-shadow" placeholder="Search data..." type="text" />
+                    </div>
+                    <!-- Actions -->
+                    <div class="flex gap-2">
+                        <button class="flex items-center justify-center size-10 rounded-full bg-gray-100 dark:bg-[#2e4328] text-gray-600 dark:text-white hover:bg-primary/20 hover:text-primary transition-colors relative">
+                            <span class="material-symbols-outlined">notifications</span>
+                            <span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border border-white dark:border-[#2e4328]"></span>
+                        </button>
+                        <button class="flex items-center justify-center size-10 rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all">
+                            <span class="material-symbols-outlined">add</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <!-- Dashboard Content -->
+            <div class="p-6 md:p-8 space-y-8 max-w-[1600px] mx-auto w-full">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Total Sales -->
+                    <div class="bg-gray-50 dark:bg-[#1f2b1b] rounded-[2rem] p-6 flex flex-col justify-between h-40 relative overflow-hidden group hover:shadow-lg transition-all border border-transparent hover:border-primary/20">
+                        <div class="flex justify-between items-start z-10">
+                            <div>
+                                <p class="text-slate-500 dark:text-[#a2c398] text-sm font-medium mb-1">Total Sales</p>
+                                <h3 class="text-3xl font-extrabold text-slate-800 dark:text-white">$24,500</h3>
+                            </div>
+                            <div class="bg-primary/10 p-2 rounded-full">
+                                <span class="material-symbols-outlined text-primary">attach_money</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 z-10">
+                            <span class="bg-[#0bda35]/20 text-[#0bda35] text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px]">trending_up</span> 12%
+                            </span>
+                            <span class="text-slate-400 dark:text-slate-500 text-xs">vs last month</span>
+                        </div>
+                        <!-- Decorative bg graphic -->
+                        <div class="absolute -bottom-4 -right-4 size-24 rounded-full bg-primary/5 blur-xl group-hover:bg-primary/10 transition-colors"></div>
+                    </div>
+                    <!-- New Users -->
+                    <div class="bg-gray-50 dark:bg-[#1f2b1b] rounded-[2rem] p-6 flex flex-col justify-between h-40 relative overflow-hidden group hover:shadow-lg transition-all border border-transparent hover:border-primary/20">
+                        <div class="flex justify-between items-start z-10">
+                            <div>
+                                <p class="text-slate-500 dark:text-[#a2c398] text-sm font-medium mb-1">New Users</p>
+                                <h3 class="text-3xl font-extrabold text-slate-800 dark:text-white">1,240</h3>
+                            </div>
+                            <div class="bg-blue-500/10 p-2 rounded-full">
+                                <span class="material-symbols-outlined text-blue-500">group_add</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 z-10">
+                            <span class="bg-[#0bda35]/20 text-[#0bda35] text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px]">trending_up</span> 5%
+                            </span>
+                            <span class="text-slate-400 dark:text-slate-500 text-xs">vs last month</span>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 size-24 rounded-full bg-blue-500/5 blur-xl group-hover:bg-blue-500/10 transition-colors"></div>
+                    </div>
+                    <!-- Revenue -->
+                    <div class="bg-gray-50 dark:bg-[#1f2b1b] rounded-[2rem] p-6 flex flex-col justify-between h-40 relative overflow-hidden group hover:shadow-lg transition-all border border-transparent hover:border-primary/20">
+                        <div class="flex justify-between items-start z-10">
+                            <div>
+                                <p class="text-slate-500 dark:text-[#a2c398] text-sm font-medium mb-1">Revenue</p>
+                                <h3 class="text-3xl font-extrabold text-slate-800 dark:text-white">$84k</h3>
+                            </div>
+                            <div class="bg-purple-500/10 p-2 rounded-full">
+                                <span class="material-symbols-outlined text-purple-500">monitoring</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 z-10">
+                            <span class="bg-[#0bda35]/20 text-[#0bda35] text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px]">trending_up</span> 22%
+                            </span>
+                            <span class="text-slate-400 dark:text-slate-500 text-xs">vs last month</span>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 size-24 rounded-full bg-purple-500/5 blur-xl group-hover:bg-purple-500/10 transition-colors"></div>
+                    </div>
+                    <!-- Active Sessions -->
+                    <div class="bg-gray-50 dark:bg-[#1f2b1b] rounded-[2rem] p-6 flex flex-col justify-between h-40 relative overflow-hidden group hover:shadow-lg transition-all border border-transparent hover:border-primary/20">
+                        <div class="flex justify-between items-start z-10">
+                            <div>
+                                <p class="text-slate-500 dark:text-[#a2c398] text-sm font-medium mb-1">Active Sessions</p>
+                                <h3 class="text-3xl font-extrabold text-slate-800 dark:text-white">432</h3>
+                            </div>
+                            <div class="bg-orange-500/10 p-2 rounded-full">
+                                <span class="material-symbols-outlined text-orange-500">timer</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 z-10">
+                            <span class="bg-red-500/20 text-red-500 text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px]">trending_down</span> 2%
+                            </span>
+                            <span class="text-slate-400 dark:text-slate-500 text-xs">vs last month</span>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 size-24 rounded-full bg-orange-500/5 blur-xl group-hover:bg-orange-500/10 transition-colors"></div>
+                    </div>
+                </div>
+                <!-- Charts Area -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Main Chart -->
+                    <div class="lg:col-span-2 bg-gray-50 dark:bg-[#1f2b1b] rounded-[2rem] p-6 border border-transparent hover:border-primary/10 transition-colors">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                            <div>
+                                <h3 class="text-slate-800 dark:text-white text-lg font-bold">Sales Overview</h3>
+                                <p class="text-slate-500 dark:text-[#a2c398] text-sm">Revenue performance over time</p>
+                            </div>
+                            <div class="flex bg-gray-200 dark:bg-[#2e4328] rounded-full p-1 self-start sm:self-center">
+                                <button class="px-4 py-1.5 rounded-full bg-white dark:bg-primary text-slate-900 dark:text-white text-xs font-bold shadow-sm">Monthly</button>
+                                <button class="px-4 py-1.5 rounded-full text-slate-500 dark:text-slate-300 text-xs font-bold hover:text-slate-700 dark:hover:text-white">Weekly</button>
+                                <button class="px-4 py-1.5 rounded-full text-slate-500 dark:text-slate-300 text-xs font-bold hover:text-slate-700 dark:hover:text-white">Daily</button>
+                            </div>
+                        </div>
+                        <!-- Chart SVG -->
+                        <div class="w-full h-[300px] relative">
+                            <svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 800 300">
+                                <!-- Grid lines -->
+                                <line stroke="#a2c398" stroke-dasharray="4 4" stroke-opacity="0.2" x1="0" x2="800" y1="250" y2="250"></line>
+                                <line stroke="#a2c398" stroke-dasharray="4 4" stroke-opacity="0.2" x1="0" x2="800" y1="190" y2="190"></line>
+                                <line stroke="#a2c398" stroke-dasharray="4 4" stroke-opacity="0.2" x1="0" x2="800" y1="130" y2="130"></line>
+                                <line stroke="#a2c398" stroke-dasharray="4 4" stroke-opacity="0.2" x1="0" x2="800" y1="70" y2="70"></line>
+                                <!-- Gradient definition -->
+                                <defs>
+                                    <lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+                                        <stop offset="0%" stop-color="#53d22d" stop-opacity="0.2"></stop>
+                                        <stop offset="100%" stop-color="#53d22d" stop-opacity="0"></stop>
+                                    </lineargradient>
+                                </defs>
+                                <!-- Area Path -->
+                                <path d="M0,250
+                                         C100,240 150,180 200,160
+                                         S300,200 400,120
+                                         S500,80 600,100
+                                         S700,40 800,20
+                                         V300 H0 Z" fill="url(#chartGradient)"></path>
+                                <!-- Line Path -->
+                                <path d="M0,250
+                                         C100,240 150,180 200,160
+                                         S300,200 400,120
+                                         S500,80 600,100
+                                         S700,40 800,20" fill="none" stroke="#53d22d" stroke-linecap="round" stroke-width="4"></path>
+                                <!-- Points -->
+                                <circle cx="200" cy="160" fill="#162013" r="6" stroke="#53d22d" stroke-width="3"></circle>
+                                <circle cx="400" cy="120" fill="#162013" r="6" stroke="#53d22d" stroke-width="3"></circle>
+                                <circle cx="600" cy="100" fill="#162013" r="6" stroke="#53d22d" stroke-width="3"></circle>
+                                <circle cx="800" cy="20" fill="#162013" r="6" stroke="#53d22d" stroke-width="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="flex justify-between mt-4 px-2 text-xs font-medium text-slate-400 dark:text-[#a2c398]">
+                            <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span>
+                        </div>
+                    </div>
+                    <!-- Side Stats / Activity -->
+                    <div class="bg-primary rounded-[2rem] p-6 text-[#162013] flex flex-col justify-between relative overflow-hidden">
+                        <div class="relative z-10">
+                            <h3 class="text-xl font-extrabold mb-1">Weekly Target</h3>
+                            <p class="text-[#162013]/70 text-sm font-medium">You're doing great!</p>
+                            <div class="mt-8 flex flex-col gap-1">
+                                <div class="flex justify-between text-sm font-bold">
+                                    <span>$12,400</span>
+                                    <span>$15,000</span>
+                                </div>
+                                <div class="w-full h-3 bg-black/10 rounded-full overflow-hidden">
+                                    <div class="h-full bg-[#162013] w-[82%] rounded-full"></div>
+                                </div>
+                                <p class="text-xs font-semibold mt-2 text-right">82% Completed</p>
+                            </div>
+                        </div>
+                        <div class="relative z-10 mt-8">
+                            <div class="bg-white/20 backdrop-blur-sm rounded-xl p-4 flex items-center gap-3">
+                                <div class="bg-[#162013] p-2 rounded-full text-white">
+                                    <span class="material-symbols-outlined text-[20px]">star</span>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-sm">Top Performer</p>
+                                    <p class="text-xs text-[#162013]/80">Product A reached 1k sales</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Abstract pattern -->
+                        <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-bl-[100px] z-0"></div>
+                        <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-tr-[80px] z-0"></div>
+                    </div>
+                </div>
+                <!-- Recent Activity Table -->
+                <div class="bg-gray-50 dark:bg-[#1f2b1b] rounded-[2rem] border border-transparent dark:border-[#2e4328]/30 overflow-hidden">
+                    <div class="p-6 border-b border-gray-200 dark:border-[#2e4328]/50 flex items-center justify-between">
+                        <h3 class="text-slate-800 dark:text-white text-lg font-bold">Recent Transactions</h3>
+                        <button class="text-primary text-sm font-bold hover:underline">View All</button>
+                    </div>
+                    <div class="overflow-x-auto">
+
+                        tr&gt;
+                        <table class="w-full text-left border-collapse">
+                            <thead class="bg-gray-100 dark:bg-[#2e4328]/30 text-xs uppercase text-slate-500 dark:text-[#a2c398]">
+                                <tr>
+                                    <th class="px-6 py-4 font-semibold tracking-wider">Transaction</th>
+                                    <th class="px-6 py-4 font-semibold tracking-wider">Date</th>
+                                    <th class="px-6 py-4 font-semibold tracking-wider">Status</th>
+                                    <th class="px-6 py-4 font-semibold tracking-wider text-right">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 dark:divide-[#2e4328]/50 text-sm">
+                                <tr class="hover:bg-gray-100 dark:hover:bg-[#2e4328]/20 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="size-8 rounded-full bg-slate-200 dark:bg-[#2e4328] flex items-center justify-center text-slate-600 dark:text-white font-bold text-xs">JS</div>
+                                            <span class="font-medium text-slate-800 dark:text-white">John Smith</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-slate-500 dark:text-[#a2c398]">Nov 14, 2024</td>
+                                    <td class="px-6 py-4">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-800 dark:bg-[#0bda35]/20 dark:text-[#0bda35]">
+                                            Completed
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right font-bold text-slate-800 dark:text-white">$120.00</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100 dark:hover:bg-[#2e4328]/20 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="size-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-300 font-bold text-xs">SC</div>
+                                            <span class="font-medium text-slate-800 dark:text-white">Sarah Connor</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-slate-500 dark:text-[#a2c398]">Nov 14, 2024</td>
+                                    <td class="px-6 py-4">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-yellow-100 text-yellow-800 dark:bg-yellow-500/20 dark:text-yellow-400">
+                                            Pending
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right font-bold text-slate-800 dark:text-white">$340.00</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100 dark:hover:bg-[#2e4328]/20 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="size-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-300 font-bold text-xs">KR</div>
+                                            <span class="font-medium text-slate-800 dark:text-white">Kyle Reese</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-slate-500 dark:text-[#a2c398]">Nov 13, 2024</td>
+                                    <td class="px-6 py-4">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800 dark:bg-red-500/20 dark:text-red-400">
+                                            Failed
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right font-bold text-slate-800 dark:text-white">$50.00</td>
+                                </tr>
+                                <tr class="hover:bg-gray-100 dark:hover:bg-[#2e4328]/20 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="size-8 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 dark:text-indigo-300 font-bold text-xs">T8</div>
+                                            <span class="font-medium text-slate-800 dark:text-white">T-800</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-slate-500 dark:text-[#a2c398]">Nov 12, 2024</td>
+                                    <td class="px-6 py-4">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-800 dark:bg-[#0bda35]/20 dark:text-[#0bda35]">
+                                            Completed
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right font-bold text-slate-800 dark:text-white">$999.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
