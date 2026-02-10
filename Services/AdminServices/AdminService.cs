@@ -17,6 +17,14 @@ namespace AkademiQMongoDb.Services.AdminServices
             _adminCollection = database.GetCollection<Admin>("Admins");
         }
 
+        public async Task<ResultAdminDto> GetAdminByUserNameAsync(string userName)
+        {
+            var admin = await _adminCollection.Find(x=> x.UserName== 
+             userName).FirstOrDefaultAsync();
+
+            return admin.Adapt<ResultAdminDto>();
+        }
+
         async Task IAdminService.CreateAdminAsync(RegisterAdminDto registerAdminDto)
         {
             var admin = registerAdminDto.Adapt<Admin>();

@@ -35,10 +35,6 @@
                     <span class="material-symbols-outlined">settings</span>
                     <span class="text-sm font-medium">Settings</span>
                 </a>
-                <a class="flex items-center gap-4 px-4 py-3 rounded-full text-[#a2c398] hover:bg-[#2e4328]/50 hover:text-white transition-all group" href="#">
-                    <span class="material-symbols-outlined">support_agent</span>
-                    <span class="text-sm font-medium">Support</span>
-                </a>
             </nav>
         </div>
         <!-- User/Logout -->
@@ -46,14 +42,16 @@
             <div class="p-4 rounded-2xl bg-[#1f2b1b] border border-[#2e4328]/50 flex items-center gap-3">
                 <div class="bg-center bg-no-repeat bg-cover rounded-full size-10 shrink-0 border-2 border-primary" data-alt="User avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDurRFNgHlrRkNYLV4uuz7vQNAoCVyo5R2ehm804-BersGqVgDvt0FXDyIUbAxt48NFoqgRXa3xr0Umxy6XRhznJzC1T084lc657w8exBMg0-F9roQCExPzdAvdIKVoC6seEdvEO-X2ZrbkNh-F_-5UBwWzhCZgHW8pAz7JACUaGdzNqjHJ52T8TMUl015-dhL0ArM1tEvCFbfeJAXA2GMXyuPfWtZnXdy-9gvcxnHH--SgcGkoLcZXcY9tBw9YT7QR29KSmJ1_cOo");'></div>
                 <div class="overflow-hidden">
-                    <p class="text-white text-sm font-bold truncate">Jane Doe</p>
+                    <p class="text-white text-sm font-bold truncate">@ViewBag.fullName</p>
                     <p class="text-[#a2c398] text-xs truncate">Admin</p>
                 </div>
             </div>
-            <button class="flex w-full items-center justify-center gap-2 rounded-full h-11 bg-[#2e4328] hover:bg-[#3a5232] text-white text-sm font-bold tracking-wide transition-colors">
-                <span class="material-symbols-outlined text-[20px]">logout</span>
-                <span>Sign Out</span>
-            </button>
+            <form method="post" action="/Login/Logout">
+                <button type="submit" class="flex w-full items-center justify-center gap-2 rounded-full h-11 bg-[#2e4328] hover:bg-[#3a5232] text-white text-sm font-bold tracking-wide transition-colors">
+                    <span class="material-symbols-outlined text-[20px]">logout</span>
+                    <span>Çıkış yap</span>
+                </button>
+            </form>
         </div>
     </div>
 </aside>
