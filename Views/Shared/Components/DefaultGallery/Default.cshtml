@@ -1,0 +1,40 @@
+@model List<AkademiQMongoDb.DTOs.GalleryDtos.ResultGalleryDto>
+
+<!-- Start Food Gallery 
+============================================= -->
+<div class="gallery-style-two-area default-padding">
+    <div class="container">
+         <div class="row">
+             <div class="col-lg-8 offset-lg-2">
+                 <div class="site-heading text-center">
+                     <h4 class="sub-title">Galerimiz</h4>
+                     <h2 class="title split-text">O anlar</h2>
+                 </div>
+             </div>
+         </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="gallery-content-items">
+                <div id="portfolio-grid" class="gallery-items colums-3">
+                    @foreach (var item in Model)
+                    {
+                        <!-- Single Item -->
+                        <div class="pf-item wow fadeInUp">
+                            <div class="gallery-style-one">
+                                <div class="item">
+                                    <a href="@item.ImageUrl" class="popup-gallery">
+                                        <img src="@item.ImageUrl" alt="Image Not Found">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Item -->
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Food Gallery -->

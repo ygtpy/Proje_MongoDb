@@ -1,0 +1,71 @@
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+    <!-- Stat Card 1 -->
+    <div class="bg-white dark:bg-[#1f2b1b] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-[#2e4328] hover:shadow-md transition-shadow">
+        <div class="flex items-center justify-between mb-4">
+            <div class="size-12 bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 rounded-xl flex items-center justify-center">
+                <span class="material-symbols-outlined">inventory_2</span>
+            </div>
+            <span class="flex items-center gap-1 text-xs font-medium text-green-600 bg-green-50 dark:bg-green-900/20 px-2 py-1 rounded-lg">
+                <span class="material-symbols-outlined text-[14px]">trending_up</span>
+                +12%
+            </span>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-1">128</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Toplam Ürün</p>
+    </div>
+
+    <!-- Stat Card 2 -->
+    <div class="bg-white dark:bg-[#1f2b1b] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-[#2e4328] hover:shadow-md transition-shadow">
+        <div class="flex items-center justify-between mb-4">
+            <div class="size-12 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-xl flex items-center justify-center">
+                <span class="material-symbols-outlined">category</span>
+            </div>
+            <span class="flex items-center gap-1 text-xs font-medium text-blue-600 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded-lg">
+                <span class="material-symbols-outlined text-[14px]">trending_up</span>
+                +5%
+            </span>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-1">12</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Kategori</p>
+    </div>
+    
+    <!-- Stat Card 3 -->
+    <div class="bg-white dark:bg-[#1f2b1b] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-[#2e4328] hover:shadow-md transition-shadow">
+         <div class="flex items-center justify-between mb-4">
+            <div class="size-12 bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 rounded-xl flex items-center justify-center">
+                <span class="material-symbols-outlined">orders</span>
+            </div>
+             <span class="flex items-center gap-1 text-xs font-medium text-orange-600 bg-orange-50 dark:bg-orange-900/20 px-2 py-1 rounded-lg">
+                <span class="material-symbols-outlined text-[14px]">trending_up</span>
+                +8%
+            </span>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-1">45</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Aktif Sipariş</p>
+    </div>
+
+     <!-- Stat Card 4 -->
+    <div class="bg-white dark:bg-[#1f2b1b] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-[#2e4328] hover:shadow-md transition-shadow">
+         <div class="flex items-center justify-between mb-4">
+            <div class="size-12 bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 rounded-xl flex items-center justify-center">
+                <span class="material-symbols-outlined">group</span>
+            </div>
+             <span class="flex items-center gap-1 text-xs font-medium text-purple-600 bg-purple-50 dark:bg-purple-900/20 px-2 py-1 rounded-lg">
+                <span class="material-symbols-outlined text-[14px]">trending_up</span>
+                +15%
+            </span>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-1">1,240</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Toplam Müşteri</p>
+    </div>
+</div>
+
+<div class="bg-white dark:bg-[#1f2b1b] rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-[#2e4328]">
+    <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-4">Son İşlemler</h3>
+    <p>Sistem istatistikleri ve son aktiviteler burada görüntülenecek.</p>
+</div>

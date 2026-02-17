@@ -1,0 +1,43 @@
+@model List<AkademiQMongoDb.DTOs.TestimonialDtos.ResultTestimonialDto>
+@{
+    ViewData["Title"] = "Referanslar Listesi";
+}
+
+<div class="bg-white dark:bg-[#1f2b1b] rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-[#2e4328]">
+    <div class="flex items-center justify-between mb-6">
+        <div>
+            <h3 class="text-lg font-bold text-slate-800 dark:text-white">Referanslar Listesi</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Müşteri yorumlarını buradan yönetebilirsiniz.</p>
+        </div>
+        <a href="/Admin/Testimonial/CreateTestimonial" class="bg-primary text-white hover:bg-green-600 px-4 py-2 rounded-xl text-sm font-medium transition-colors flex items-center gap-2">
+            <span class="material-symbols-outlined text-[20px]">add</span>
+            Yeni Ekle
+        </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        @foreach (var item in Model)
+        {
+            <div class="bg-gray-50 dark:bg-[#2e4328] rounded-xl p-6 relative group hover:shadow-md transition-all">
+                <div class="flex items-center gap-4 mb-4">
+                    <img src="@item.ImageUrl" class="h-12 w-12 rounded-full object-cover" alt="" />
+                    <div>
+                        <h4 class="font-bold text-slate-800 dark:text-white">@item.FullName</h4>
+                        <p class="text-sm text-primary">@item.Title</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3">
+                    @item.Comment
+                </p>
+                <div class="flex justify-end gap-2 mt-4 pt-4 border-t border-gray-200 dark:border-[#3d5635]">
+                    <a href="/Admin/Testimonial/UpdateTestimonial/@item.Id" class="text-blue-500 hover:text-blue-600 transition-colors">
+                        <span class="material-symbols-outlined">edit</span>
+                    </a>
+                    <a href="/Admin/Testimonial/DeleteTestimonial/@item.Id" class="text-red-500 hover:text-red-600 transition-colors">
+                        <span class="material-symbols-outlined">delete</span>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

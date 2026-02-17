@@ -1,0 +1,47 @@
+@model List<AkademiQMongoDb.DTOs.TestimonialDtos.ResultTestimonialDto>
+
+<!-- Start Testimonial Area 
+============================================= -->
+<div class="testimonial-area default-padding bg-dark text-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="site-heading text-center">
+                    <h4 class="sub-title">Yorumlar</h4>
+                    <h2 class="title">Müşterilerimiz Ne Diyor?</h2>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-carousel swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+
+                @foreach (var item in Model)
+                {
+                    <!-- Single Item -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-style-one text-center">
+                            <div class="thumb">
+                                <img src="@item.ImageUrl" alt="Image Not Found">
+                            </div>
+                            <div class="info">
+                                <p>
+                                    "@item.Comment"
+                                </p>
+                                <h4>@item.FullName</h4>
+                                <span>@item.Title</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Item -->
+                }
+
+            </div>
+            <!-- Navigation -->
+            <div class="testimonial-pagination">
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Testimonial Area -->

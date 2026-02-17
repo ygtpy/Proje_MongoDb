@@ -1,0 +1,55 @@
+@model List<AkademiQMongoDb.DTOs.BannerDtos.ResultBannerDto>
+
+<!-- Start Banner Area 
+============================================= -->
+<div class="banner-area banner-style-four navigation-circle overflow-hidden bg-theme text-light bg-cover" style="background-image: url(/source/assets/img/shape/1.jpg);">
+    <!-- Slider main container -->
+    <div class="banner-fade">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+
+            @foreach (var item in Model)
+            {
+                <!-- Single Item -->
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="content">
+                            <div class="shape">
+                                <img src="~/source/assets/img/shape/23.png" alt="Image Not Found">
+                                <img src="~/source/assets/img/shape/24.png" alt="Image Not Found">
+                            </div>
+                            <div class="row align-center">
+                                <div class="col-lg-6">
+                                    <h4>@item.Title</h4>
+                                    <h2>@item.SubTitle</h2>
+                                    <p>
+                                        @item.Description
+                                    </p>
+                                    <div class="button mt-40">
+                                        <a class="btn btn-theme btn-md animation" href="/Product/Index">Sipariş Ver</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="thumb">
+                                        <img src="@item.ImageUrl" alt="Image Not Found">
+                                        <img src="~/source/assets/img/shape/22.png" alt="Image Not Found">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+            }
+
+        </div>
+
+        <!-- Navigation -->
+        <div class="swiper-nav-left">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
+    </div>  
+</div>
+<!-- End Banner -->

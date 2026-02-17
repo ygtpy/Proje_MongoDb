@@ -1,6 +1,17 @@
 using AkademiQMongoDb.Services.AdminServices;
 using AkademiQMongoDb.Services.CategoryServices;
 using AkademiQMongoDb.Services.ProductServices;
+using AkademiQMongoDb.Services.AboutServices;
+using AkademiQMongoDb.Services.BannerServices;
+using AkademiQMongoDb.Services.ContactServices;
+using AkademiQMongoDb.Services.FeatureServices;
+using AkademiQMongoDb.Services.GalleryServices;
+using AkademiQMongoDb.Services.MessageServices;
+using AkademiQMongoDb.Services.ServiceServices;
+using AkademiQMongoDb.Services.TeamServices;
+using AkademiQMongoDb.Services.TeamsSocialLinkServices;
+using AkademiQMongoDb.Services.TestimonialServices;
+using AkademiQMongoDb.Services.WhyUsServices;
 using AkademiQMongoDb.Settings;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -17,6 +28,17 @@ builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection(na
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IAdminService, AdminService>();
+builder.Services.AddScoped<IAboutService, AboutService>();
+builder.Services.AddScoped<IBannerService, BannerService>();
+builder.Services.AddScoped<IContactService, ContactService>();
+builder.Services.AddScoped<IFeatureService, FeatureService>();
+builder.Services.AddScoped<IGalleryService, GalleryService>();
+builder.Services.AddScoped<IMessageService, MessageService>();
+builder.Services.AddScoped<IServiceService, ServiceService>();
+builder.Services.AddScoped<ITeamService, TeamService>();
+builder.Services.AddScoped<ITeamsSocialLinkService, TeamsSocialLinkService>();
+builder.Services.AddScoped<ITestimonialService, TestimonialService>();
+builder.Services.AddScoped<IWhyUsService, WhyUsService>();
 
 
 builder.Services.AddSingleton<IDatabaseSettings>(sp =>

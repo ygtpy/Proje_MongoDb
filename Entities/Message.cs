@@ -4,10 +4,11 @@ namespace AkademiQMongoDb.Entities
 {
     public class Message : BaseEntity
     {
-        public string FullName { get; set; }
+        public string NameSurname { get; set; }
         public string Email { get; set; }
         public string Subject { get; set; }
-        public string Content { get; set; }
-        public string IsRead { get; set; }
+        public string MessageContent { get; set; }
+        public DateTime SendDate { get; set; }
+        public bool IsRead { get; set; }
     }
 }

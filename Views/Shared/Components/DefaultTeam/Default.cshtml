@@ -1,0 +1,42 @@
+@model List<AkademiQMongoDb.DTOs.TeamDtos.ResultTeamDto>
+
+<!-- Start Chef Area 
+============================================= -->
+<div class="chef-area default-padding-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="site-heading text-center">
+                    <h4 class="sub-title">Şeflerimiz</h4>
+                    <h2 class="title">Uzman Kadromuz</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <!-- Single Item -->
+                <div class="col-lg-4 col-md-6 mb-30 wow fadeInUp">
+                    <div class="chef-style-one">
+                        <div class="thumb">
+                            <img src="@item.ImageUrl" alt="Image Not Found">
+                            <div class="social">
+                                <ul class="social-link">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h4>@item.FullName</h4>
+                            <span>@item.Title</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+            }
+        </div>
+    </div>
+</div>
+<!-- End Chef Area -->

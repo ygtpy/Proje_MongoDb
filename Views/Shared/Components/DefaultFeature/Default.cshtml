@@ -1,0 +1,27 @@
+@model List<AkademiQMongoDb.DTOs.FeatureDtos.ResultFeatureDto>
+
+<!-- Features section if applicable. If not used in template, this might be empty or used for "Why Choose Us" -->
+@if (Model != null && Model.Count > 0)
+{
+    <div class="feature-style-two-area default-padding-bottom">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6 mb-30 wow fadeInUp">
+                        <div class="feature-style-two">
+                            <div class="icon">
+                                <img src="@item.ImageUrl" alt="Icon"> 
+                                <!-- Assuming ImageUrl stores icon path or use class if available -->
+                            </div>
+                            <div class="info">
+                                <h4>@item.Title</h4>
+                                <p>@item.Description</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}

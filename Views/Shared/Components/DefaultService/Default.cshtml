@@ -1,0 +1,37 @@
+@model List<AkademiQMongoDb.DTOs.ServiceDtos.ResultServiceDto>
+
+<!-- Start Services 
+============================================= -->
+<div class="services-area default-padding bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="site-heading text-center">
+                    <h4 class="sub-title">Hizmetlerimiz</h4>
+                    <h2 class="title">Size Sunduklarımız</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+             @foreach (var item in Model)
+             {
+                <!-- Single Item -->
+                <div class="col-lg-4 col-md-6 mb-30 wow fadeInUp">
+                    <div class="service-style-one text-center">
+                        <div class="thumb">
+                            <img src="@item.ImageUrl" alt="Image Not Found">
+                        </div>
+                        <div class="info">
+                            <h4><a href="/Services/Index">@item.Title</a></h4>
+                            <p>
+                                @item.Description
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+             }
+        </div>
+    </div>
+</div>
+<!-- End Services -->
