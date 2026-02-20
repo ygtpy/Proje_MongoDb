@@ -118,8 +118,8 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
     try
     {
-       // Wait for seeding to complete
-       DatabaseSeeder.SeedAsync(services).Wait();
+       // Await seeding to complete
+       await DatabaseSeeder.SeedAsync(services);
     }
     catch (Exception ex)
     {

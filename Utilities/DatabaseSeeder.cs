@@ -153,9 +153,9 @@ namespace AkademiQMongoDb.Utilities
             {
                 await featureService.CreateAsync(new CreateFeatureDto
                 {
-                    Title = "Çıtır Tavuk Menü",
-                    Description = "Dışı çıtır içi yumuşacık tavuklar.",
-                    ImageUrl = "/source/assets/img/icon/1.png"
+                    Title = "Meksikano Pizzalar",
+                    Description = "Meksikano pizzalarımızı sipariş verin.",
+                    ImageUrl = "/source/assets/img/shape/9.jpg"
                 });
                  await featureService.CreateAsync(new CreateFeatureDto
                 {
