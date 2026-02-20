@@ -1,0 +1,27 @@
+@model AkademiQMongoDb.DTOs.SubscriberDtos.UpdateSubscriberDto
+
+@{
+    ViewData["Title"] = "Abone Güncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Abone Güncelle</h4>
+                    <form method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" asp-for="Email" placeholder="Email adresi">
+                        </div>
+                        <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                        <a href="/Admin/AdminSubscriber/Index" class="btn btn-light">İptal</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

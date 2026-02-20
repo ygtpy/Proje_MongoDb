@@ -1,0 +1,42 @@
+@model List<AkademiQMongoDb.DTOs.SubscriberDtos.ResultSubscriberDto>
+
+@{
+    ViewData["Title"] = "Abone Listesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Aboneler</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Email</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Id</td>
+                                        <td>@item.Email</td>
+                                        <td>
+                                            <a href="/Admin/AdminSubscriber/DeleteSubscriber/@item.Id" class="btn btn-danger btn-sm">Sil</a>
+                                            <a href="/Admin/AdminSubscriber/UpdateSubscriber/@item.Id" class="btn btn-primary btn-sm">Güncelle</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

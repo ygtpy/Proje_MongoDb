@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <!-- ========== Meta Tags ========== -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Lezzet Mutfağı - Fast Food & Restaurant">
+    <meta name="description" content="Lezzet Mutfağı - Restoran & Kafe">
 
     <!-- ========== Page Title ========== -->
-    <title>Lezzet Mutfağı</title>
+    <title>Lezzet Mutfağı - Ana Sayfa</title>
 
     <!-- ========== Favicon Icon ========== -->
     <link rel="shortcut icon" href="~/source/assets/img/favicon.png" type="image/x-icon">
@@ -30,11 +30,20 @@
     <link href="~/source/style.css" rel="stylesheet">
     <!-- ========== End Stylesheet ========== -->
 
+    <!--[if lte IE 9]>
+        <p class="browserupgrade"><strong>Eski bir tarayıcı</strong> kullanıyorsunuz. Lütfen deneyiminizi iyileştirmek ve güvenlik için <a href="https://browsehappy.com/">tarayıcınızı güncelleyin</a>.</p>
+    <![endif]-->
+
 </head>
 
 <body>
 
-    <!-- Start Preloader -->
+    <div class="radio-btn-light">
+        <div class="radio-inner-light"></div>
+    </div>
+
+    <!-- Start Preloader 
+    ============================================= -->
     <div id="preloader">
         <div id="restan-preloader" class="restan-preloader">
             <div class="animation-preloader">
@@ -60,10 +69,24 @@
     </div>
     <!-- End Preloader -->
 
-    <!-- Header -->
+    <!-- Header 
+    ============================================= -->
     <header>
         <!-- Start Navigation -->
         <nav class="navbar mobile-sidenav navbar-box navbar-default validnavs navbar-sticky">
+
+            <!-- Start Top Search -->
+            <div class="top-search">
+                <div class="container-xl">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Ara">
+                        <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Search -->
+
 
             <div class="container nav-box d-flex justify-content-between align-items-center">            
 
@@ -91,13 +114,10 @@
                             <a href="/Default/Index">Ana Sayfa</a>
                         </li>
                         <li>
-                            <a href="/About/Index">Hakkımızda</a>
+                             <a href="/About/Index">Hakkımızda</a>
                         </li>
                         <li>
-                             <a href="/Product/Index">Menü</a>
-                        </li>
-                        <li>
-                            <a href="/Services/Index">Hizmetler</a>
+                            <a href="/Product/Index">Menü</a>
                         </li>
                         <li>
                             <a href="/Contact/Index">İletişim</a>
@@ -107,17 +127,7 @@
 
                 <div class="attr-right">
                     <!-- Start Atribute Navigation -->
-                    <div class="attr-nav attr-box">
-                        <ul>
-                            <li class="side-menu">
-                                <a href="#">
-                                    <span class="bar-1"></span>
-                                    <span class="bar-2"></span>
-                                    <span class="bar-3"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    @await Component.InvokeAsync("LayoutBasket")
                     <!-- End Atribute Navigation -->
                 </div>
 
@@ -129,7 +139,7 @@
                             <img src="~/source/assets/img/logo-light-2.png" alt="Logo">
                         </div>
                         <p>
-                            Lezzet durağına hoş geldiniz.
+                            En lezzetli yemekleri, en taze malzemelerle hazırlayıp sizlere sunuyoruz. Lezzet dolu anlar için bizi tercih edin.
                         </p>
                     </div>
                     <div class="widget address">
@@ -137,23 +147,43 @@
                             <ul>
                                 <li>
                                     <div class="content">
-                                        <p>Address</p> 
+                                        <p>Adres</p> 
                                         <strong>İstanbul, Türkiye</strong>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="content">
-                                        <p>Contact</p> 
-                                        <strong>+90 555 555 55 55</strong>
+                                        <p>Email</p> 
+                                        <strong>info@lezzetmutfagi.com</strong>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="content">
+                                        <p>Telefon</p> 
+                                        <strong>+90 212 123 45 67</strong>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
+                    <div class="widget newsletter">
+                        <h4 class="title">Abone Olun!</h4>
+                        <form action="/Default/Subscribe" method="post">
+                            <div class="input-group stylish-input-group">
+                                <input type="email" placeholder="E-posta adresinizi girin" class="form-control" name="Email">
+                                <span class="input-group-addon">
+                                    <button type="submit">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>  
+                                </span>
+                            </div>
+                        </form>
+                    </div>
                     <div class="widget social">
                         <ul class="link">
                             <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                             <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                         </ul>
                     </div>
@@ -173,15 +203,142 @@
 
     @RenderBody()
 
-    <!-- Start Footer -->
+    <!-- Start Footer 
+    ============================================= -->
     <footer class="bg-dark footer-style-one text-light">
         <div class="container">
+            <div class="row">
+                <!-- Singel Item -->
+                <div class="col-lg-3 col-md-6 footer-item mt-50">
+                    <div class="f-item about">
+                        <img src="~/source/assets/img/logo-3.png" alt="Image Not Found">
+                        <p>
+                            Yemek cennetimizde mutfak lezzetlerini, tarifleri ve ilhamı keşfedin.
+                        </p>
+                        <ul class="opening-list">
+                            <li>
+                                Pzt - Cum <span class="text-end">08:00 - 18:00</span>
+                            </li>
+                            <li>
+                                Cumartesi <span class="text-end">09:00 - 17:00</span>
+                            </li>
+                        </ul>                  
+                    </div>
+                </div>
+                <!-- End Singel Item -->
+
+                <!-- Singel Item -->
+                <div class="col-lg-2 col-md-6 mt-50 footer-item pl-50 pl-md-15 pl-xs-15">
+                    <div class="f-item link">
+                        <h4 class="widget-title">Keşfet</h4>
+                        <ul>
+                            <li>
+                                <a href="#">Hakkımızda</a>
+                            </li>
+                            <li>
+                                <a href="#">Ekibimiz</a>
+                            </li>
+                            <li>
+                                <a href="#">Yardım Merkezi</a>
+                            </li>
+                            <li>
+                                <a href="#">Kariyer</a>
+                            </li>
+                            <li>
+                                <a href="#">Özellikler</a>
+                            </li>
+                            <li>
+                                <a href="#">İletişim</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End Singel Item -->
+
+                <!-- Singel Item -->
+                <div class="col-lg-3 col-md-6 footer-item  mt-50">
+                    <div class="f-item contact">
+                        <h4 class="widget-title">İletişim Bilgileri</h4>
+                        <ul class="contact-widget">
+                            <li>
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="content">
+                                    İstanbul, Türkiye
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="content">
+                                    <a href="tel:+902121234567">+90 212 123 45 67</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="content">
+                                    <a href="mailto:info@lezzetmutfagi.com">info@lezzetmutfagi.com</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End Singel Item -->
+
+                <!-- Singel Item -->
+                <div class="col-lg-4 col-md-6 footer-item mt-50">
+                    <div class="f-item newsletter">
+                        <h4 class="widget-title">Bülten</h4>
+                        <p>
+                            En son haberleri ve özel teklifleri almak için abone listemize katılın.
+                        </p>
+                        <form action="/Default/Subscribe" method="post">
+                            <div class="input-group stylish-input-group">
+                                <input type="email" placeholder="E-posta adresinizi girin" class="form-control" name="Email">
+                                <span class="input-group-addon">
+                                    <button type="submit">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>  
+                                </span>
+                            </div>
+                        </form>
+                        <div class="footer-socila-items mt-30">
+                            <h4>Sosyal Medya: </h4>
+                            <ul class="footer-social">
+                                <li>
+                                    <a href="#">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Singel Item -->
+
+
+            </div>
+
             <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <div class="row align-center">
                     <div class="col-lg-6">
                         <p>
-                            &copy; Copyright 2026 Lezzet Mutfağı. All Rights Reserved
+                            © Telif Hakkı 2026 Lezzet Mutfağı. Tüm Hakları Saklıdır.
                         </p>
                     </div>
                 </div>
@@ -191,7 +348,8 @@
     </footer>
     <!-- End Footer -->
     
-    <!-- jQuery Frameworks -->
+    <!-- jQuery Frameworks
+    ============================================= -->
     <script src="~/source/assets/js/jquery-3.6.0.min.js"></script>
     <script src="~/source/assets/js/bootstrap.bundle.min.js"></script>
     <script src="~/source/assets/js/jquery.appear.js"></script>

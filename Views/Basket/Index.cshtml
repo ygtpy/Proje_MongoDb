@@ -1,0 +1,70 @@
+@model AkademiQMongoDb.DTOs.BasketDtos.ResultBasketDto
+@{
+    ViewData["Title"] = "Sepetim";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<div class="cart-area default-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Ürün Görseli</th>
+                                <th>Ürün Adı</th>
+                                <th>Fiyat</th>
+                                <th>Adet</th>
+                                <th>Toplam</th>
+                                <th>İşlem</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.BasketItems.Count > 0)
+                            {
+                                @foreach (var item in Model.BasketItems)
+                                {
+                                    <tr>
+                                        <td>
+                                            <div class="thumb">
+                                                <img src="@item.ImageUrl" alt="Thumb" style="width: 80px; height: 80px; object-fit: cover;">
+                                            </div>
+                                        </td>
+                                        <td><a href="#">@item.ProductName</a></td>
+                                        <td>@item.Price.ToString("C")</td>
+                                        <td>@item.Count</td>
+                                        <td>@((item.Price * item.Count).ToString("C"))</td>
+                                        <td>
+                                            <a href="/Basket/DeleteBasketItem?productId=@item.ProductId" class="btn btn-danger btn-sm"><i class="fa fa-times"></i> Sil</a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="6" class="text-center">Sepetinizde ürün bulunmamaktadır.</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            @if (Model.BasketItems.Count > 0)
+            {
+                <div class="col-lg-12 text-right">
+                    <div class="cart-total">
+                        <ul>
+                            <li>
+                                <span class="pull-left"> Toplam Tutar: </span>
+                                <span class="pull-right"> @Model.TotalPrice.ToString("C") </span>
+                            </li>
+                        </ul>
+                        <a href="/Checkout/Index" class="btn btn-theme effect btn-md">Ödeme Yap</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

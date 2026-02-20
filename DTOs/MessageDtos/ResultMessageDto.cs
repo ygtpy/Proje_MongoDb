@@ -1,3 +1,4 @@
+
 namespace AkademiQMongoDb.DTOs.MessageDtos
 {
     public class ResultMessageDto

@@ -14,7 +14,7 @@ namespace AkademiQMongoDb.Services.TeamsSocialLinkServices
         {
             var client = new MongoClient(databaseSettings.ConnectionString);
             var database = client.GetDatabase(databaseSettings.DatabaseName);
-            _teamsSocialLinkCollection = database.GetCollection<TeamsSocialLink>(databaseSettings.TeamSocialLinkCollectionName);
+            _teamsSocialLinkCollection = database.GetCollection<TeamsSocialLink>(databaseSettings.TeamsSocialLinkCollectionName);
         }
 
         public async Task CreateAsync(CreateTeamsSocialLinkDto teamsSocialLinkDto)

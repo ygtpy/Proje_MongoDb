@@ -4,6 +4,6 @@ namespace AkademiQMongoDb.Entities
 {
     public class Gallery : BaseEntity
     {
-        public string ImageUrl { get; set; }
+        public string ImageUrl { get; set; } = string.Empty;
     }
 }

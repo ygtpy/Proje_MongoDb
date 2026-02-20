@@ -17,7 +17,5 @@ namespace AkademiQMongoDb.Entities
         public string Title2 { get; set; }
         public string Description1 { get; set; }
         public string Description2 { get; set; }
-
-
     }
 }

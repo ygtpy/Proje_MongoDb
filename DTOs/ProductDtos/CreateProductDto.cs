@@ -18,6 +18,8 @@ namespace AkademiQMongoDb.DTOs.ProductDtos
         [Required(ErrorMessage = "Görsel Url boş bırakılamaz.")]
         public string ImageUrl { get; set; }
 
+        public string CategoryId { get; set; }
+
         [Required(ErrorMessage = "Kategori adı boş bırakılamaz.")]
         public string CategoryName { get; set; }
     }

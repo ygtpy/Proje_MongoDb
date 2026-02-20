@@ -1,0 +1,43 @@
+@model AkademiQMongoDb.DTOs.BasketDtos.ResultBasketDto
+
+<div class="attr-nav attr-box">
+    <ul>
+        <li class="dropdown">
+            <a href="/Basket/Index" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="far fa-shopping-cart"></i>
+                <span class="badge">@Model.BasketItems.Sum(x => x.Count)</span>
+            </a>
+            <ul class="dropdown-menu cart-list">
+                @if (Model.BasketItems.Count > 0)
+                {
+                    @foreach (var item in Model.BasketItems)
+                    {
+                        <li>
+                            <a href="#" class="photo"><img src="@item.ImageUrl" class="cart-thumb" alt="@item.ProductName" /></a>
+                            <h6><a href="#">@item.ProductName</a></h6>
+                            <p>@item.Count x - <span class="price">@item.Price.ToString("C")</span></p>
+                        </li>
+                    }
+                    <li class="total">
+                        <span class="pull-right"><strong>Toplam</strong>: @Model.TotalPrice.ToString("C")</span>
+                        <a href="/Basket/Index" class="btn btn-default btn-cart">Sepet</a>
+                        <a href="/Checkout/Index" class="btn btn-default btn-cart">Ödeme</a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <p class="text-center">Sepetiniz boş.</p>
+                    </li>
+                }
+            </ul>
+        </li>
+        <li class="side-menu">
+            <a href="#">
+                <span class="bar-1"></span>
+                <span class="bar-2"></span>
+                <span class="bar-3"></span>
+            </a>
+        </li>
+    </ul>
+</div>

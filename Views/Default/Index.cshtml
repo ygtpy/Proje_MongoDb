@@ -3,14 +3,12 @@
     Layout = "~/Views/Shared/_UILayout.cshtml";
 }
 
-
-
 @await Component.InvokeAsync("DefaultBanner")
-@await Component.InvokeAsync("DefaultFeature")
 @await Component.InvokeAsync("DefaultProduct")
-@await Component.InvokeAsync("DefaultAbout")
-@await Component.InvokeAsync("DefaultService")
+@await Component.InvokeAsync("DefaultFeature")
+@await Component.InvokeAsync("DefaultShop")
+@await Component.InvokeAsync("DefaultDiscount")
 @await Component.InvokeAsync("DefaultTeam")
 @await Component.InvokeAsync("DefaultTestimonial")
-@await Component.InvokeAsync("DefaultBookTable")
 @await Component.InvokeAsync("DefaultGallery")
+@await Component.InvokeAsync("DefaultBrand")

@@ -1,27 +1,53 @@
 @model List<AkademiQMongoDb.DTOs.FeatureDtos.ResultFeatureDto>
 
-<!-- Features section if applicable. If not used in template, this might be empty or used for "Why Choose Us" -->
-@if (Model != null && Model.Count > 0)
-{
-    <div class="feature-style-two-area default-padding-bottom">
-        <div class="container">
-            <div class="row">
-                @foreach (var item in Model)
-                {
-                    <div class="col-lg-4 col-md-6 mb-30 wow fadeInUp">
-                        <div class="feature-style-two">
-                            <div class="icon">
-                                <img src="@item.ImageUrl" alt="Icon"> 
-                                <!-- Assuming ImageUrl stores icon path or use class if available -->
-                            </div>
-                            <div class="info">
-                                <h4>@item.Title</h4>
-                                <p>@item.Description</p>
-                            </div>
+<!-- Start Feature Style Two 
+============================================= -->
+<div class="feature-style-two-area default-padding bg-dark text-light" style="background-image: url(/source/assets/img/shape/11.png);">
+    <div class="light-banner-active bg-dark" style="background-image: url(/source/assets/img/shape/11-dark.png);"></div>
+    <div class="shape">
+        <img src="~/source/assets/img/shape/10.png" alt="Image Not Found">
+    </div>
+    <div class="container">
+        <div class="row">
+            @if (Model != null && Model.Count > 0)
+            {
+                <!-- Single item (Left Big) -->
+                <div class="col-lg-5 feature-product-item">
+                    <a class="wow fadeInUp" href="#" style="background-image: url(@Model[0].ImageUrl);">
+                        <div class="info">
+                            <h2>@Model[0].Title</h2>
+                            <span class="btn circle btn-md btn-light animation">Sipariş Ver</span>
                         </div>
+                        <div class="thumb">
+                            <img src="@Model[0].ImageUrl" alt="Image Not Found">
+                            <div class="offer" style="background-image: url(/source/assets/img/shape/12.png);">%50 İndirim </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End Single item -->
+
+                @if (Model.Count > 1)
+                {
+                    <!-- Single item (Right Column) -->
+                    <div class="col-lg-7 feature-product-item">
+                        @for (int i = 1; i < Math.Min(Model.Count, 3); i++)
+                        {
+                            var delay = (i * 200) + "ms";
+                            <a class="wow fadeInUp" data-wow-delay="@delay" href="#" style="background-image: url(@Model[i].ImageUrl);">
+                                <div class="info">
+                                    <h2>@Model[i].Title</h2>
+                                    <span class="btn circle btn-md @(i==1 ? "btn-theme" : "btn-dark") animation">Sipariş Ver</span>
+                                </div>
+                                <div class="thumb">
+                                    <img src="@Model[i].ImageUrl" alt="Image Not Found">
+                                    @if(i==1) { <div class="offer" style="background-image: url(/source/assets/img/shape/12.png);">En İyi Fırsat</div> }
+                                </div>
+                            </a>
+                        }
                     </div>
                 }
-            </div>
+            }
         </div>
     </div>
-}
+</div>
+<!-- End Feature Style Two -->

@@ -59,7 +59,7 @@
                                                 <div class="content">
                                                     <div class="top">
                                                         <div class="title">
-                                                            <h4><a href="/Product/Index">@product.Name</a></h4>
+                                                            <h4><a href="#">@product.Name</a></h4>
                                                         </div>
                                                         <div class="price">
                                                             <span>@product.Price.ToString("C")</span>
@@ -72,7 +72,7 @@
                                                             </p>
                                                         </div>
                                                         <div class="right">
-                                                            <a href="/Product/Index" class="btn-circle btn-theme btn-xs">
+                                                            <a href="/Basket/AddToBasket?productId=@product.Id" class="btn-circle btn-theme btn-xs">
                                                                 <i class="fas fa-shopping-cart"></i>
                                                             </a>
                                                         </div>

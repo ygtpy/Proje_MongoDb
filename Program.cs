@@ -12,7 +12,11 @@ using AkademiQMongoDb.Services.TeamServices;
 using AkademiQMongoDb.Services.TeamsSocialLinkServices;
 using AkademiQMongoDb.Services.TestimonialServices;
 using AkademiQMongoDb.Services.WhyUsServices;
+using AkademiQMongoDb.Services.BasketServices;
+using AkademiQMongoDb.Services.SubscriberServices;
+using AkademiQMongoDb.Services.MailServices;
 using AkademiQMongoDb.Settings;
+using AkademiQMongoDb.Utilities;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Options;
@@ -39,6 +43,9 @@ builder.Services.AddScoped<ITeamService, TeamService>();
 builder.Services.AddScoped<ITeamsSocialLinkService, TeamsSocialLinkService>();
 builder.Services.AddScoped<ITestimonialService, TestimonialService>();
 builder.Services.AddScoped<IWhyUsService, WhyUsService>();
+builder.Services.AddScoped<IBasketService, BasketService>();
+builder.Services.AddScoped<ISubscriberService, SubscriberService>();
+builder.Services.AddScoped<IMailService, MailService>();
 
 
 builder.Services.AddSingleton<IDatabaseSettings>(sp =>
@@ -52,7 +59,7 @@ builder.Services.AddControllersWithViews(options =>
 });
 
 
-
+builder.Services.AddDistributedMemoryCache();
 
 builder.Services.AddSession(options =>
 {
@@ -82,7 +89,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 app.UseRouting();
 
 app.UseAuthentication();
@@ -105,5 +112,19 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
+// Seed Database
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+       // Wait for seeding to complete
+       DatabaseSeeder.SeedAsync(services).Wait();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("An error occurred while seeding the database: " + ex.Message);
+    }
+}
 
 app.Run();
