@@ -5,29 +5,29 @@
 
 <div class="bg-white dark:bg-[#1f2b1b] rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-[#2e4328] max-w-2xl mx-auto">
     <div class="mb-6 border-b border-gray-100 dark:border-[#2e4328] pb-4">
-        <h3 class="text-lg font-bold text-slate-800 dark:text-white">Banner Güncelle</h3>
+        <h3 class="text-lg font-bold text-black font-bold dark:text-white">Banner Güncelle</h3>
     </div>
 
     <form method="post">
         <input type="hidden" asp-for="Id" />
         <div class="space-y-4">
              <div>
-                <label class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1">Başlık</label>
+                <label class="block text-sm font-medium text-black font-bold dark:text-gray-300 mb-1">Başlık</label>
                 <input type="text" asp-for="Title" class="w-full rounded-xl border-gray-200 dark:border-[#2e4328] bg-gray-50 dark:bg-[#162013] text-sm focus:ring-primary focus:border-primary dark:text-white" />
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1">Alt Başlık</label>
+                <label class="block text-sm font-medium text-black font-bold dark:text-gray-300 mb-1">Alt Başlık</label>
                 <input type="text" asp-for="SubTitle" class="w-full rounded-xl border-gray-200 dark:border-[#2e4328] bg-gray-50 dark:bg-[#162013] text-sm focus:ring-primary focus:border-primary dark:text-white" />
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1">Görsel URL</label>
+                <label class="block text-sm font-medium text-black font-bold dark:text-gray-300 mb-1">Görsel URL</label>
                 <input type="text" asp-for="ImageUrl" class="w-full rounded-xl border-gray-200 dark:border-[#2e4328] bg-gray-50 dark:bg-[#162013] text-sm focus:ring-primary focus:border-primary dark:text-white" />
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1">Açıklama</label>
+                <label class="block text-sm font-medium text-black font-bold dark:text-gray-300 mb-1">Açıklama</label>
                 <textarea asp-for="Description" rows="4" class="w-full rounded-xl border-gray-200 dark:border-[#2e4328] bg-gray-50 dark:bg-[#162013] text-sm focus:ring-primary focus:border-primary dark:text-white"></textarea>
             </div>
 

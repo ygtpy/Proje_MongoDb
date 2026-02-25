@@ -6,8 +6,8 @@
 <div class="bg-white dark:bg-[#1f2b1b] rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-[#2e4328]">
     <div class="flex items-center justify-between mb-6">
         <div>
-            <h3 class="text-lg font-bold text-slate-800 dark:text-white">Öne Çıkanlar Listesi</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400">Ana sayfa öne çıkanlar (Feature) alanını buradan yönetebilirsiniz.</p>
+            <h3 class="text-lg font-bold text-black font-bold dark:text-white">Öne Çıkanlar Listesi</h3>
+            <p class="text-sm text-black font-semibold dark:text-gray-400">Ana sayfa öne çıkanlar (Feature) alanını buradan yönetebilirsiniz.</p>
         </div>
         <a href="/Admin/Feature/CreateFeature" class="bg-primary text-white hover:bg-green-600 px-4 py-2 rounded-xl text-sm font-medium transition-colors flex items-center gap-2">
             <span class="material-symbols-outlined text-[20px]">add</span>
@@ -18,7 +18,7 @@
     <div class="overflow-x-auto">
         <table class="w-full">
             <thead>
-                <tr class="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider border-b border-gray-100 dark:border-[#2e4328]">
+                <tr class="text-left text-xs font-semibold text-black font-semibold uppercase tracking-wider border-b border-gray-100 dark:border-[#2e4328]">
                     <th class="px-4 py-3">Görsel</th>
                     <th class="px-4 py-3">Başlık</th>
                     <th class="px-4 py-3">Alt Başlık</th>
@@ -33,9 +33,9 @@
                             <img src="@item.ImageUrl" class="h-16 w-16 rounded-lg object-cover bg-gray-100" alt="" />
                         </td>
                         <td class="px-4 py-3">
-                            <span class="font-medium text-slate-700 dark:text-gray-200">@item.Title</span>
+                            <span class="font-medium text-black font-bold dark:text-gray-200">@item.Title</span>
                         </td>
-                         <td class="px-4 py-3 text-slate-600 dark:text-gray-400">
+                         <td class="px-4 py-3 font-semibold text-black dark:text-gray-400">
                             @item.SubTitle
                         </td>
                         <td class="px-4 py-3 text-right">
